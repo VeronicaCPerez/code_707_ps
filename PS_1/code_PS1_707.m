@@ -23,7 +23,7 @@ F_x = normcdf(X, mu_normal, sigma_normal);
 F_y = normcdf(Y, mu_normal, sigma_normal);
 
 % Compute the joint CDF H(x, y)
-H = normcdf(X, mu_x, sigma_x) .* normcdf(Y, mu_y, sigma_y);
+H = normcdf(X, mu_normal, sigma_normal) .* normcdf(Y, mu_normal, sigma_normal);
 
 % Compute H_plus
 H_plus = min(F_x, F_y);
@@ -39,7 +39,7 @@ xlabel('X');
 ylabel('Y');
 zlabel('H');
 set(gcf, 'Color', 'w'); % Set the background color to white
-saveas(gcf, '/Users/veronica/Dropbox/PhD/2023_2/EC_707_Stats/problem_sets_707/PS_1/H_normal.png'); % Save as PNG
+saveas(gcf, '/Users/veronica/Dropbox/Apps/Overleaf/EC_707_PS_vcperez/figures/PS_1_H_normal.png'); % Save as PNG
 
 % Create Figure 2: H_plus
 figure;
@@ -49,7 +49,7 @@ xlabel('X');
 ylabel('Y');
 zlabel('H Plus');
 set(gcf, 'Color', 'w'); % Set the background color to white
-saveas(gcf, '/Users/veronica/Dropbox/PhD/2023_2/EC_707_Stats/problem_sets_707/PS_1/H_plus_normal.png'); % Save as PNG
+saveas(gcf, '/Users/veronica/Dropbox/Apps/Overleaf/EC_707_PS_vcperez/figures/PS_1_H_plus_normal.png'); % Save as PNG
 
 % Create Figure 3: H_minus
 figure;
@@ -59,7 +59,7 @@ xlabel('X');
 ylabel('Y');
 zlabel('H Minus');
 set(gcf, 'Color', 'w'); % Set the background color to white
-saveas(gcf, '/Users/veronica/Dropbox/PhD/2023_2/EC_707_Stats/problem_sets_707/PS_1/H_minus_normal.png'); % Save as PNG
+saveas(gcf, '/Users/veronica/Dropbox/Apps/Overleaf/EC_707_PS_vcperez/figures/PS_1_H_minus_normal.png'); % Save as PNG
 
 
 %%% with uniform dist
@@ -100,7 +100,7 @@ xlabel('X');
 ylabel('Y');
 zlabel('H');
 set(gcf, 'Color', 'w'); % Set the background color to white
-saveas(gcf, '/Users/veronica/Dropbox/PhD/2023_2/EC_707_Stats/problem_sets_707/PS_1/H_unf.png'); % Save as PNG
+saveas(gcf, '/Users/veronica/Dropbox/Apps/Overleaf/EC_707_PS_vcperez/figures/PS_1_H_unf.png'); % Save as PNG
 
 % Create Figure 2: H_plus
 figure;
@@ -110,7 +110,7 @@ xlabel('X');
 ylabel('Y');
 zlabel('H Plus');
 set(gcf, 'Color', 'w'); % Set the background color to white
-saveas(gcf, '/Users/veronica/Dropbox/PhD/2023_2/EC_707_Stats/problem_sets_707/PS_1/H_plus_unf.png'); % Save as PNG
+saveas(gcf, '/Users/veronica/Dropbox/Apps/Overleaf/EC_707_PS_vcperez/figures/PS_1_H_plus_unf.png'); % Save as PNG
 
 % Create Figure 3: H_minus
 figure;
@@ -120,5 +120,5 @@ xlabel('X');
 ylabel('Y');
 zlabel('H Minus');
 set(gcf, 'Color', 'w'); % Set the background color to white
-saveas(gcf, '/Users/veronica/Dropbox/PhD/2023_2/EC_707_Stats/problem_sets_707/PS_1/H_minus_unf.png'); % Save as PNG
+saveas(gcf, '/Users/veronica/Dropbox/Apps/Overleaf/EC_707_PS_vcperez/figures/PS_1_H_minus_unf.png'); % Save as PNG
 
