@@ -38,13 +38,13 @@ for i = 1:length(N_values)
     N = N_values(i);
     
     % Exact distribution parameters
-    exact_mu = exp(mu);
-    exact_var = (exp(2 * mu) * sigma2) / sqrt(N);
+    exact_mu = 1;
+    exact_var = 1 / N;
     
     % Plot exact PDF
     x = linspace(exact_mu - 4 * sqrt(exact_var), exact_mu + 4 * sqrt(exact_var), 100);
-    y = normpdf(x, exact_mu, sqrt(exact_var));
-    plot(x, y, 'LineWidth', 1.5, 'DisplayName', ['N = ' num2str(N)]);
+    y_exact = normpdf(x, exact_mu, sqrt(exact_var));
+    plot(x, y_exact, 'LineWidth', 1.5, 'DisplayName', ['N = ' num2str(N)]);
 end
 title('Exact PDF');
 xlabel('Value of e^{X}');
@@ -59,7 +59,7 @@ for i = 1:length(N_values)
     
     % Asymptotic distribution parameters
     asymptotic_mu = exp(mu_X);
-    asymptotic_var = (exp(2 * mu_X) * sigma2_X) / N;
+    asymptotic_var = exp(2) / N;
     
     % Plot asymptotic PDF
     x = linspace(asymptotic_mu - 4 * sqrt(asymptotic_var), asymptotic_mu + 4 * sqrt(asymptotic_var), 100);
@@ -70,3 +70,5 @@ title('Asymptotic PDF');
 xlabel('Value of e^{X}');
 ylabel('Probability Density');
 legend;
+
+saveas(gcf, '/Users/veronica/Dropbox/Apps/Overleaf/EC_707_PS_vcperez/figures/PS_3_4_3.png'); % Save as PNG
